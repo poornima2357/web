@@ -1,135 +1,386 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-    
-    <title>E.A.B School Admission</title>
-    <style>
-        /* this for overall Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #004080;
-            padding: 15px 30px;
-            color: white;}
-        /* this is Logo section */
-        .logo {
-            display: flex;
-            align-items: center;}
+<meta charset="UTF-8">
+<title>EAB Govt School</title>
 
-       .logo img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;}
-       /* Navbar */
-        nav ul {
-            list-style: none;
-            display: flex;}
-        
-        nav ul li {
-            margin-left: 20px;}
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;}
+<style>
 
-       nav ul li a:hover {
-            text-decoration: underline;}
-      
-       /* Home Section */
-        .home {
-            text-align: center;
-            padding: 100px 20px;
-            background: #e6f2ff;
-        }
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
 
-        .home h2 {
-            font-size: 40px;
-            margin-bottom: 10px;}
+/* BODY */
+body{
+    background:#f5f9ff;
+}
 
-       .home p {
-            font-size: 20px;
-            margin-bottom: 20px;}
-       
-       .home button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #004080;
-            color: white;
-            border: none;
-            cursor: pointer;}
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#003366;
+    color:white;
+}
 
-      .home button:hover {
-            background-color: #00264d;}
-     
-     /* About Section */
-        .about {
-            padding: 60px 20px;
-            text-align: center;}
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+}
+.logo img{
+    width:50px;
+    margin-right:10px;
+}
 
-        .about h2 {
-            font-size: 30px;
-            margin-bottom: 15px;}
-        
-        .about p {
-            max-width: 600px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.6;}
+/* NAV */
+nav ul{
+    display:flex;
+    list-style:none;
+}
+nav ul li{
+    margin-left:25px;
+}
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+nav ul li a:hover{
+    color:#66ccff;
+}
 
-        /* Footer */
-        footer {
-            background-color: #004080;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 20px;}
+/* HERO WITH ANIMATION */
+.home{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,50,0.6),rgba(0,0,50,0.6)),
+    url('https://images.unsplash.com/photo-1588072432836-e10032774350');
+    background-size:cover;
+    background-position:center;
 
-       
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    text-align:center;
+
+    /* NEW ANIMATION */
+    animation: fadeZoom 2s ease;
+}
+
+/* TITLE */
+.home h1{
+    font-size:40px;
+    animation: slideDown 1.5s ease;
+}
+
+/* SUBTITLE */
+.home h2{
+    font-weight:300;
+    animation: slideUp 1.5s ease;
+}
+
+/* TEXT */
+.home p{
+    margin-top:10px;
+    animation: fadeIn 2s ease;
+}
+
+/* BUTTON */
+.home button{
+    margin-top:20px;
+    padding:12px 25px;
+    background:#00aaff;
+    border:none;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+
+    animation: zoomIn 2s ease;
+    transition:0.3s;
+}
+
+.home button:hover{
+    transform:scale(1.1);
+}
+@keyframes fadeZoom{
+    from{
+        opacity:0;
+        transform:scale(1.1);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes zoomIn{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* SECTION */
+section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:0.4s;
+    text-align:left;
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h3{
+    padding:10px 15px;
+    color:#003366;
+}
+
+.card p{
+    padding:0 15px 20px;
+    font-size:14px;
+}
+
+/* 3D EFFECT */
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* ABOUT */
+.about-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    justify-content:center;
+    align-items:center;
+}
+
+.about img{
+    width:300px;
+    border-radius:10px;
+}
+
+.about-text{
+    max-width:500px;
+    text-align:left;
+}
+
+/* FORM */
+form{
+    max-width:400px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+form input{
+    padding:10px;
+    margin:10px 0;
+    border:1px solid #ccc;
+}
+
+form button{
+    padding:10px;
+    background:#003366;
+    color:white;
+    border:none;
+}
+
+/* FOOTER */
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .about-container{
+        flex-direction:column;
+    }
+}
+
 </style>
-
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-        <img src = "logo eab.png" alt="EAB School Logo">
-        <h1>EAB gvt Higher sec School</h1>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <img src="pic eab.png">
+        <h2>EAB Govt H.S.S</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#facilities">Facilities</a></li>
+            <li><a href="#admission">Admission</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="home">
+    <h1>EAB Govt School</h1>
+    <h2>ஈ.அ.ப அரசு மேல்நிலைப் பள்ளி</h2>
+    <p>Empowering Students Through Education</p>
+    <button>Apply Now</button>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+    <h2>Our Facilities</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="library.jpg">
+            <h3>School Library</h3>
+            <p>
+                Over 5,000 books in Tamil & English covering academics,
+                literature, and general knowledge with a dedicated reading room.
+            </p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-        </header>
-    <!-- Home Section -->
-    <section id="home" class="home">
-    <h2>Welcome to EAB Government Higher Secondary School</h2>
-        <p>Admissions Open for 2026-2027</p>
-        <button>Apply Now</button>
-    </section>
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>
-            EAB govt higher Secondary School is committed to providing quality education and shaping
-            future leaders. We focus on academic excellence, discipline, and
-            overall student development.
-        </p>
-    </section>
-     <!-- Footer -->
-    <footer>
-        <p>© 2026 EAB School. All rights reserved.</p>
-    </footer>
 
+        <div class="card">
+            <img src="chemistrylab.jpg">
+            <h3>Chemistry Lab</h3>
+            <p>
+                Fully equipped laboratory for practical experiments helping
+                students understand scientific concepts.
+            </p>
+        </div>
 
-    
+        <div class="card">
+            <img src="computerlab.jpg">
+            <h3>Computer Lab</h3>
+            <p>
+                Modern computers with internet access to improve digital learning.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="sports.jpg">
+            <h3>Sports</h3>
+            <p>
+                Spacious playground to promote physical fitness and teamwork.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h2>About School</h2>
+
+    <div class="about-container">
+        <img src="image.jpg">
+
+        <div class="about-text">
+            <p>
+                EAB Govt Higher Secondary School is committed to providing quality education and shaping the future of young minds. The school focuses on academic excellence, discipline, and the overall development of students through a balanced approach to learning. With well-equipped facilities such as a rich library, modern laboratories, and sports infrastructure, the institution supports both intellectual and physical growth. Our dedicated teachers strive to create a positive and inspiring learning environment that encourages creativity, confidence, and leadership. The mission of the school is to develop responsible citizens with strong values and a lifelong passion for learning.
+            </p>
+
+            <p>
+                ஈ.அ.ப அரசு மேல்நிலைப் பள்ளி மாணவர்களுக்கு தரமான கல்வியை வழங்கி, அவர்களின் முழுமையான வளர்ச்சியை உறுதி செய்யும் ஒரு முன்னணி கல்வி நிறுவனமாக விளங்குகிறது. ஒழுக்கம், அறிவு மற்றும் சமூக பொறுப்பு கொண்ட நல்ல குடிமக்களை உருவாக்குவது எங்கள் முக்கிய நோக்கம்.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ADMISSION -->
+<section id="admission">
+    <h2>Admission Form</h2>
+    <form>
+        <input type="text" placeholder="Student Name">
+        <input type="text" placeholder="Class">
+        <input type="text" placeholder="Parent Name">
+        <input type="text" placeholder="Phone Number">
+        <button>Submit</button>
+    </form>
+</section>
+
+<!-- LOCATION -->
+<section id="contact">
+    <h2>Location</h2>
+    <iframe src="https://www.google.com/maps?q=11.2718829,77.0106426&output=embed"
+    width="100%" height="300"></iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 EAB Govt H.S.S | All Rights Reserved</p>
+</footer>
+
 </body>
 </html>
